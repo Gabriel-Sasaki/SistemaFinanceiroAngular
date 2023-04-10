@@ -1,0 +1,57 @@
+<div class="m-4">
+  <h1 class="text-light display-6">{{ operation }}</h1>
+  <hr class="text-light">
+
+  <form [formGroup]="emprestimoForm" (ngSubmit)="submitMethod(emprestimoForm.value)">
+    <div class="row">
+
+      <div class="col">
+        <div class="mb-3">
+          <label class="form-label text-light" for="cpfCliente">CPF Cliente</label>
+          <input id="cpf" type="text" class="form-control bg-dark text-light" formControlName="cpfCliente" [readOnly]="disableFields">
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-3">
+          <label class="form-label text-light" for="valorInicial">Valor Inicial</label>
+          <input id="valorInicial" type="number" class="form-control bg-dark text-light" formControlName="valorInicial" [readOnly]="disableFields" min="1">
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-3">
+          <label class="form-label text-light" for="relacionamento">Relacionamento</label>
+          <select id="relacionamento" class="form-select bg-dark text-light" aria-label="Relacionamento" formControlName="relacionamento">
+            <option value="BRONZE">Bronze</option>
+            <option value="PRATA">Prata</option>
+            <option value="OURO">Ouro</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col">
+        <div class="mb-3">
+          <label class="form-label text-light" for="dataInicial">Data Inicial</label>
+          <input id="dataInicial" type="date" class="form-control bg-dark text-light" formControlName="dataInicial" [readOnly]="disableFields">
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-3">
+          <label class="form-label text-light" for="dataFinal">Data Final</label>
+          <input id="dataFinal" type="date" class="form-control bg-dark text-light" formControlName="dataFinal" [readOnly]="disableFields">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col mt-3">
+        <button class="btn me-3" type="submit" [disabled]="validateFields ? emprestimoForm.invalid : false" [ngClass]="colorSubmitBtn">{{ operation }}</button>
+        <a class="btn" [ngClass]="colorCancelBtn" routerLink="/emprestimos">Cancelar</a>
+      </div>
+    </div>
+  </form>
+</div>

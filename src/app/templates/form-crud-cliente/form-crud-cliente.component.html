@@ -1,0 +1,65 @@
+<div class="m-4">
+  <h1 class="text-light display-6">{{ operation }}</h1>
+  <hr class="text-light">
+
+  <form [formGroup]="clienteForm" (ngSubmit)="submitMethod(clienteForm.value)">
+    <div class="row">
+
+      <div class="col">
+        <div class="mb-3">
+          <label class="form-label text-light" for="cpf">CPF</label>
+          <input id="cpf" type="text" class="form-control bg-dark text-light" formControlName="cpf" [readOnly]="disableFields || disableCPF">
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-3">
+          <label class="form-label text-light" for="nome">Nome</label>
+          <input id="nome" type="text" class="form-control bg-dark text-light" formControlName="nome" minlength="3" [readOnly]="disableFields">
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-3">
+          <label class="form-label text-light" for="telefone">Telefone</label>
+          <input id="telefone" type="tel" class="form-control bg-dark text-light" formControlName="telefone" [readOnly]="disableFields">
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-3">
+          <label class="form-label text-light" for="rendimento">Rendimento Mensal</label>
+          <input id="rendimento" type="number" class="form-control bg-dark text-light" formControlName="rendimentoMensal" min="1" [readOnly]="disableFields">
+        </div>
+      </div>
+    </div>
+
+    <form [formGroup]="endereco">
+      <div class="row">
+        <div class="col">
+          <div class="mb-3">
+            <label class="form-label text-light" for="cep">CEP</label>
+            <input id="cep" type="text" class="form-control bg-dark text-light" formControlName="cep" minlength="8" [readOnly]="disableFields" (blur)="buscaEndereco()">
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-3">
+            <label class="form-label text-light" for="rua">Rua</label>
+            <input id="rua" type="text" class="form-control bg-dark text-light" formControlName="rua" minlength="3" [readOnly]="disableFields">
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-3">
+            <label class="form-label text-light" for="numero">Número</label>
+            <input id="numero" type="text" class="form-control bg-dark text-light" formControlName="numero" minlength="1" [readOnly]="disableFields">
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="row">
+      <div class="col mt-3">
+        <button class="btn me-3" type="submit" [disabled]="validateFields ? clienteForm.invalid : false" [ngClass]="colorSubmitBtn">{{ operation }}</button>
+        <a class="btn" [ngClass]="colorCancelBtn" routerLink="/clientes">Cancelar</a>
+      </div>
+    </div>
+  </form>
+
+</div>
