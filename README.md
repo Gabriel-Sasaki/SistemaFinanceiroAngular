@@ -1,27 +1,25 @@
-# SistemaFinanceiro
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
+# Sistema Financeiro em Spring
 
-## Development server
+Esse projeto foi desenvolvido durante o desafio do programa Jovens Profissionais e 40+ da empresa Minsait.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Sobre o Desafio
 
-## Code scaffolding
+O desafio é dividido em duas partes:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Back-End: Criar uma API REST que possibilite o CRUD de Clientes e a criação, leitura e deleção de Empréstimos. As tecnologias utilizadas foram: Spring Boot 3.7.4, Java 8, H2 Database e Hibernate/JPA;
 
-## Build
+* Front-End: Criar uma SPA para consumir a API construída no back-end e mostrar na tela a listagem de Clientes com as operações CRUD. As tecnologias utilizadas foram: Angular 15, Bootstrap 5.3 e Sweetalert2.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Você pode encontrar o link do Back-End aqui: https://github.com/Gabriel-Sasaki/SistemaFinanceiroSpring
 
-## Running unit tests
+# Telas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Home
+Possui uma breve descrição do projeto e suas funcionalidades.
 
-## Running end-to-end tests
+## Clientes
+Permite o CRUD de Clientes, com listagem em tabela.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Empréstimos
+Permite as operações de criação, leitura e deleção de Empréstimos, com listagem em tabela e filtragem por CPF.
