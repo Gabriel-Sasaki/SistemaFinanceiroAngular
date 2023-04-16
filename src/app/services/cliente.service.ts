@@ -7,7 +7,7 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class ClienteService {
-  private endpoint = 'http://localhost:8080/api/v1';
+  private endpoint = 'https://musical-tanuki-f04520.netlify.app/api/v1';
   private resource = 'clientes';
 
   private _submitForm: Subject<ICliente> = new Subject();
