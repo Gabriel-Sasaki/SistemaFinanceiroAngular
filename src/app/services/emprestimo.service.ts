@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class EmprestimoService {
-  private endpoint = 'https://musical-tanuki-f04520.netlify.app/api/v1/clientes';
+  private endpoint = 'https://sistemafinanceirospring-production.up.railway.app/api/v1/clientes';
   private resource = 'emprestimos';
 
   private _submitForm: Subject<IEmprestimo> = new Subject();
